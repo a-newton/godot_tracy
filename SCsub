@@ -31,5 +31,10 @@ if "tracy_on_demand" in env and env["tracy_on_demand"]:
     env_modules.Append(CPPDEFINES=["TRACY_ON_DEMAND"])
     env.Append(CPPDEFINES=["TRACY_ON_DEMAND"])
 
+if "tracy_timer_fallback" in env and env["tracy_timer_fallback"] == "yes":
+    env_tracy.Append(CPPDEFINES=["TRACY_TIMER_FALLBACK"])
+    env_modules.Append(CPPDEFINES=["TRACY_TIMER_FALLBACK"])
+    env.Append(CPPDEFINES=["TRACY_TIMER_FALLBACK"])
+
 env_tracy.add_source_files(env.modules_sources, tracy_sources)
 env_tracy.add_source_files(env.modules_sources, "*.cpp")
