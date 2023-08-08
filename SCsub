@@ -26,7 +26,7 @@ if "tracy_enable" in env and env["tracy_enable"] == "yes":
     env_modules.Append(CPPDEFINES=["TRACY_ENABLE", "TRACY_DELAYED_INIT"])
     env.Append(CPPDEFINES=["TRACY_ENABLE", "TRACY_DELAYED_INIT"])
 
-if "tracy_on_demand" in env and env["tracy_on_demand"]:
+if "tracy_on_demand" in env and env["tracy_on_demand"] == "yes":
     env_tracy.Append(CPPDEFINES=["TRACY_ON_DEMAND"])
     env_modules.Append(CPPDEFINES=["TRACY_ON_DEMAND"])
     env.Append(CPPDEFINES=["TRACY_ON_DEMAND"])
